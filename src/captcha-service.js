@@ -4,6 +4,11 @@ export const validateHuman = async(token) => {
             `https://www.google.com/recaptcha/api/siteverify?secret=${process.env.REACT_APP_RECAPTCHA_SECRET_KEY}&response=${token}`,
             {
               method: "POST",
+              headers:{
+                'Access-Control-Allow-Origin': '*',
+                'Content-Type': 'application/x-www-form-urlencoded'
+              },
+              
             }
           );
           const data = await response.json();
