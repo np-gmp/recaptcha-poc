@@ -76,7 +76,6 @@ const MyForm = () => {
       <ReCAPTCHA 
         ref={captchaRef} //for INVISIBLE SIZE
         size='normal'
-        type='audio'
         sitekey={process.env.REACT_APP_RECAPTCHA_SITE_KEY} 
         onChange={(val)=>{setCaptchaKey(val)
           setError({...error,captcha:''}
