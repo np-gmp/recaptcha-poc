@@ -1,5 +1,6 @@
 export const validateHuman = async(token) => {
     try{
+      // Google api call should initiated from server side only, here its throwing CORS error.
         const response = await fetch(
             `https://www.google.com/recaptcha/api/siteverify?secret=${process.env.REACT_APP_RECAPTCHA_SECRET_KEY}&response=${token}`,
             {
@@ -8,7 +9,7 @@ export const validateHuman = async(token) => {
                 'Access-Control-Allow-Origin': '*',
                 'Content-Type': 'application/x-www-form-urlencoded'
               },
-              
+        
             }
           );
           const data = await response.json();
